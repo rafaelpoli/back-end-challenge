@@ -1,6 +1,8 @@
 <?php
 /**
  * Back-end Challenge.
+ * 
+ * Nome do candidato: Rafael Poli <rafaelpoli@gmail.com>
  *
  * PHP version 7.2
  *
@@ -15,3 +17,15 @@
 declare(strict_types=1);
 
 require __DIR__ . '/vendor/autoload.php';
+
+use \App\Conversao;
+
+$url = rtrim( $_SERVER['REQUEST_URI'], "/" );
+$endpoints = explode( "/", $url );
+$converter = new Conversor($endpoints);
+
+$converter->retornarCode();
+$converter->retornarConteudo();
+
+
+
